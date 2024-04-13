@@ -3,9 +3,7 @@ models.py is used to define the database schema.
 """
 
 from sqlalchemy import Column, Integer, String
-from database.setup import setup_db
-
-Base, SessionLocal = setup_db()
+from database.db import Base
 
 
 class Book(Base):
