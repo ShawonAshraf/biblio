@@ -50,7 +50,7 @@ async def get_book(book_id: int, db: Session = Depends(get_db)):
 @app.post("/books/add", response_model=schemas.Book)
 async def add_book(book: schemas.BookCreate, db: Session = Depends(get_db)):
     new_book = crud.add_book(db, book)
-    if new_book:
+    if not new_book:
         logger.error("Book already exists!")
         raise HTTPException(status_code=201, detail="Book already exists!")
     return new_book
