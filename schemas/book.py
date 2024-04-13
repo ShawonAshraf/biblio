@@ -14,6 +14,6 @@ class Book(BaseModel):
 # for a book that already exists
 # the id field is required
 class BookWithId(BaseModel):
-    id: str
+    id: int
     book_name: str
     author: str
