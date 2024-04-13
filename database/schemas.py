@@ -11,6 +11,10 @@ class BookBase(BaseModel):
     author: str
 
 
+class BookCreate(BookBase):
+    pass
+
+
 # schema to be used by the database for
 # creating a new book
 
