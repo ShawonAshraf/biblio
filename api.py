@@ -13,6 +13,7 @@ app = FastAPI()
 
 
 # Dependency
+# gives a database context to the api
 def get_db():
     db = SessionLocal()
     try:
@@ -33,7 +34,7 @@ async def get_books(db: Session = Depends(get_db)):
         return db_books
     except Exception as e:
         logger.error(f"Error: {e}")
-        raise HTTPException(status_code=404, detail="Books not found!")
+        return []
 
 
 @app.get("/books/{book_id}", response_model=schemas.Book)
