@@ -14,7 +14,7 @@ from loguru import logger
 # the provider has to be openai compatible
 LLM_PROVIDER_URL = os.getenv("LLM_PROVIDER_URL", "http://gandalf:11434/v1")
 # mistral is the default model, used from ollama
-MODEL_NAME = os.getenv("MODEL_NAME", "mistral")
+MODEL_NAME = os.getenv("MODEL_NAME", "calebfahlgren/natural-functions")
 # in case of using openai models
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "ollama")
 
@@ -35,7 +35,7 @@ def setup():
     return client
 
 
-def send_instruction(client, instruction: str) -> dict:
+def add_book(client, instruction: str) -> dict:
     # prompt
     messages = [
         {
