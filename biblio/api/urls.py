@@ -16,7 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from ninja import NinjaAPI
 
+api = NinjaAPI()
+
+# api endpoints via django-ninja
+
+
+@api.get("/root")
+def root(request):
+    return {"message": "biblio api", "version": "0.1", "status": "running"}
+
+
+# NOTE: urlpatterns must be defined after the functions
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("api/", api.urls),
 ]
+
+
