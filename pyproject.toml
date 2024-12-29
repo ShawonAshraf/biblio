@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "biblio"
+version = "0.1.0"
+description = ""
+authors = ["Shawon Ashraf"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django-ninja = "^1.3.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.0.1"
+ruff = "^0.8.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
